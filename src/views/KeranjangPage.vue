@@ -116,7 +116,7 @@ export default {
     },
     hapusKeranjang(id) {
       axios
-        .delete("http://localhost:3000/keranjangs/" + id)
+        .delete("https://confused-northern-ranunculus.glitch.me/keranjangs/" + id)
         .then(() => {
           this.$toast.error("Berhasil Hapus Keranjang", {
             type: "error",
@@ -127,7 +127,7 @@ export default {
 
           // Update Data keranjang
           axios
-            .get("http://localhost:3000/keranjangs")
+            .get("https://confused-northern-ranunculus.glitch.me/keranjangs")
             .then((response) => this.setKeranjangs(response.data))
             .catch((error) => console.log(error));
         })
@@ -137,11 +137,11 @@ export default {
       if (this.pesan.nama && this.pesan.noMeja) {
         this.pesan.keranjangs = this.keranjangs;
         axios
-          .post("http://localhost:3000/pesanans", this.pesan)
+          .post("https://confused-northern-ranunculus.glitch.me/pesanans", this.pesan)
           .then(() => {
             // Hapus Semua Keranjang
             this.keranjangs.map(function (item) {
-              return axios.delete("http://localhost:3000/keranjangs/" + item.id).catch((error) => console.log(error));
+              return axios.delete("https://confused-northern-ranunculus.glitch.me/keranjangs/" + item.id).catch((error) => console.log(error));
             });
 
             this.$router.push({ path: "/pesanan-sukses" });
@@ -165,7 +165,7 @@ export default {
   },
   mounted() {
     axios
-      .get("http://localhost:3000/keranjangs")
+      .get("https://confused-northern-ranunculus.glitch.me/keranjangs")
       .then((response) => this.setKeranjangs(response.data))
       .catch((error) => console.log(error));
   },
