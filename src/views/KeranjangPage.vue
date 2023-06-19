@@ -70,26 +70,13 @@
           </div>
         </div>
       </div>
-      <!-- form checkout -->
-      <div class="row justify-content-end mt-5 keranjang3">
-        <div class="col-md-4">
-          <div class="card shadow" style="border-radius: 20px; background-color: rgb(231, 255, 231); border: none">
-            <div class="card-body" style="padding-left: 40px; padding-right: 40px">
-              <h4 style="margin-top: 40px"><strong>Konfirmasi Pesananmu</strong></h4>
-              <form class="mt-4" v-on:submit.prevent>
-                <div class="form-group" style="margin-bottom: 12px; font-weight: 500">
-                  <label for="nama">Nama :</label>
-                  <input type="text" class="form-control" v-model="pesan.nama" style="border-radius: 20px" />
-                </div>
-                <div class="form-group" style="margin-bottom: 12px; font-weight: 500">
-                  <label for="noMeja">Nomor Meja :</label>
-                  <input type="text" class="form-control" v-model="pesan.noMeja" style="border-radius: 20px" />
-                </div>
 
-                <button type="submit" class="btn btn-success mt-4 mb-4" @click="checkout" style="float: right"><i class="bi bi-cart-plus"></i> Check Out</button>
-              </form>
-            </div>
-          </div>
+      <div class="row">
+        <div class="col-md-6 justify-content-center">
+          <router-link class="btn btn-md btn-success mt-4 tombol" to="/ditempat"> <i class="bi bi-cart-plus"></i> Klik Disini untuk Pesan ditempat </router-link>
+        </div>
+        <div class="col-md-6">
+          <router-link class="btn btn-md mt-4 online" to="/online"> <i class="bi bi-cart-plus"></i> Klik Disini untuk Pesan Online </router-link>
         </div>
       </div>
     </div>
@@ -133,35 +120,35 @@ export default {
         })
         .catch((error) => console.log(error));
     },
-    checkout() {
-      if (this.pesan.nama && this.pesan.noMeja) {
-        this.pesan.keranjangs = this.keranjangs;
-        axios
-          .post("https://confused-northern-ranunculus.glitch.me/pesanans", this.pesan)
-          .then(() => {
-            // Hapus Semua Keranjang
-            this.keranjangs.map(function (item) {
-              return axios.delete("https://confused-northern-ranunculus.glitch.me/keranjangs/" + item.id).catch((error) => console.log(error));
-            });
+    // checkout() {
+    //   if (this.pesan.nama && this.pesan.noMeja) {
+    //     this.pesan.keranjangs = this.keranjangs;
+    //     axios
+    //       .post("https://confused-northern-ranunculus.glitch.me/pesanans", this.pesan)
+    //       .then(() => {
+    //         // Hapus Semua Keranjang
+    //         this.keranjangs.map(function (item) {
+    //           return axios.delete("https://confused-northern-ranunculus.glitch.me/keranjangs/" + item.id).catch((error) => console.log(error));
+    //         });
 
-            this.$router.push({ path: "/pesanan-sukses" });
-            this.$toast.success("Berhasil Dipesan", {
-              type: "success",
-              position: "top-right",
-              duration: 3000,
-              dismissible: true,
-            });
-          })
-          .catch((err) => console.log(err));
-      } else {
-        this.$toast.error("Nama dan Nomor Meja Harus diisi", {
-          type: "error",
-          position: "top-right",
-          duration: 3000,
-          dismissible: true,
-        });
-      }
-    },
+    //         this.$router.push({ path: "/pesanan-sukses" });
+    //         this.$toast.success("Berhasil Dipesan", {
+    //           type: "success",
+    //           position: "top-right",
+    //           duration: 3000,
+    //           dismissible: true,
+    //         });
+    //       })
+    //       .catch((err) => console.log(err));
+    //   } else {
+    //     this.$toast.error("Nama dan Nomor Meja Harus diisi", {
+    //       type: "error",
+    //       position: "top-right",
+    //       duration: 3000,
+    //       dismissible: true,
+    //     });
+    //   }
+    // },
   },
   mounted() {
     axios
@@ -180,6 +167,14 @@ export default {
 </script>
 
 <style scoped>
+.btn {
+  font-weight: 600;
+  width: 100%;
+}
+.online {
+  margin-left: 20px;
+  background-color: greenyellow;
+}
 @media (max-width: 767.98px) {
   .keranjang,
   .keranjang2,
@@ -188,6 +183,10 @@ export default {
   }
   h4 strong {
     font-size: 20px;
+  }
+  .online {
+    margin-left: 0px;
+    background-color: greenyellow;
   }
 }
 </style>

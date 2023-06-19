@@ -10,7 +10,8 @@
                 <br />menggunakan Gadgetmu
               </h2>
               <p>Ayo segera pilih dan pesan makanan favorit Kamu</p>
-              <router-link class="btn btn-lg btn-success mt-4 tombol" to="/menu"> <i class="bi bi-cart-plus"></i> Pesan Sekarang </router-link>
+              <router-link class="btn btn-lg btn-success mt-4 tombol" to="/menu"> <i class="bi bi-cart-plus"></i> Pesan ditempat </router-link>
+              <router-link class="btn btn-lg mt-4 online" to="/daftar"> <i class="bi bi-cart-plus"></i> Pesan Online </router-link>
             </div>
           </div>
         </div>
@@ -27,6 +28,14 @@ export default {
 };
 </script>
 <style scoped>
+.btn {
+  width: 270px;
+  font-weight: 600;
+}
+.online {
+  margin-left: 20px;
+  background-color: greenyellow;
+}
 @media (max-width: 767.98px) {
   .hero {
     text-align: center;
@@ -37,6 +46,10 @@ export default {
 
   .tombol {
     width: 100%;
+  }
+  .online {
+    width: 100%;
+    margin-left: 0;
     margin-bottom: 40px;
   }
 }
