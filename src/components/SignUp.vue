@@ -94,7 +94,7 @@ export default {
   },
   methods: {
     async signUp() {
-      let result = await axios.post("http://localhost:3000/users", {
+      let result = await axios.post("https://alive-seasoned-summer.glitch.me/users", {
         email: this.email,
         password: this.password,
         name: this.name,
