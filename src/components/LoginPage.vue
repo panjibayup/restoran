@@ -3,7 +3,7 @@
     <NavbarPage />
   </div>
   <div class="container">
-    <div class="padding">
+    <div class="padding" data-aos="zoom-in" data-aos-duration="1500">
       <div class="card">
         <h4 class="card-title mb-1 text-center" style="color: green">Masuk</h4>
         <p class="card-text text-center mb-3" style="color: #9b9b9b">Silahkan masuk terlebih dahulu</p>

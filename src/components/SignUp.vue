@@ -2,7 +2,7 @@
   <div class="daftaran">
     <NavbarPage />
     <div class="container">
-      <div class="padding">
+      <div class="padding" data-aos="zoom-in" data-aos-duration="1500">
         <div class="card">
           <h4 class="card-title mb-1 text-center" style="color: green">Daftar</h4>
           <p class="card-text text-center mb-3" style="color: #9b9b9b">Daftarkan akun kamu terlebih dahulu</p>
@@ -107,6 +107,13 @@ export default {
           type: "success",
           position: "top-right",
           duration: 4000,
+          dismissible: true,
+        });
+      } else {
+        this.$toast.error("Email dan Password Harus di isi", {
+          type: "error",
+          position: "top-right",
+          duration: 3000,
           dismissible: true,
         });
       }

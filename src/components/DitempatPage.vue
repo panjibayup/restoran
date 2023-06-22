@@ -2,7 +2,7 @@
   <div class="ditempat">
     <NavbarPage />
     <div class="container" style="margin-top: 150px">
-      <div class="row justify-content-center mt-5 keranjang3">
+      <div class="row justify-content-center mt-5 keranjang3" data-aos="zoom-in" data-aos-duration="2000">
         <div class="col-md-4">
           <div class="card shadow" style="border-radius: 20px; background-color: rgb(231, 255, 231); border: none">
             <div class="card-body" style="padding-left: 40px; padding-right: 40px">

@@ -3,7 +3,7 @@
     <NavbarPage />
     <div class="container">
       <div class="row mt-4 daftar-makanan">
-        <div class="col">
+        <div class="col" data-aos="fade-down" data-aos-duration="1500">
           <h2>
             Daftar
             <strong>Makanan</strong>
@@ -11,7 +11,7 @@
         </div>
       </div>
 
-      <div class="row mt-3 daftar-makanan2">
+      <div class="row mt-3 daftar-makanan2" data-aos="fade-right" data-aos-duration="1500">
         <div class="col">
           <div class="input-group mb-3">
             <input v-model="search" type="text" class="form-control" placeholder="Cari Makanan Kesukaan Kamu..." aria-label="Cari" aria-describedby="basic-addon1" @keyup="searchFood" />
@@ -26,7 +26,7 @@
       </div>
 
       <div class="row mb-4 daftar-makanan3">
-        <div class="col-md-4 mt-4 mb-4" v-for="product in products" :key="product.id">
+        <div class="col-md-4 mt-4 mb-4" v-for="product in products" :key="product.id" data-aos="zoom-in-right" data-aos-duration="1500">
           <CardProduct :product="product" />
         </div>
       </div>

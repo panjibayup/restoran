@@ -20,10 +20,10 @@
       </div>
 
       <div class="row mt-5 pesan2">
-        <div class="col-md-6">
+        <div class="col-md-6" data-aos="zoom-in" data-aos-duration="1500">
           <img :src="'../assets/images/' + product.gambar" class="img-fluid shadow" style="border-radius: 15px" />
         </div>
-        <div class="col-md-6 nama">
+        <div class="col-md-6 nama" data-aos="fade-right" data-aos-duration="1500">
           <h2>
             <strong>{{ product.nama }}</strong>
           </h2>

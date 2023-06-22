@@ -22,7 +22,7 @@
       <div class="row mt-5 keranjang2">
         <div class="col">
           <h2>Keranjang <strong>Saya</strong></h2>
-          <div class="table-responsive mt-4">
+          <div class="table-responsive mt-4" data-aos="fade-left" data-aos-duration="1500">
             <table class="table">
               <thead>
                 <tr>
@@ -72,11 +72,14 @@
       </div>
 
       <div class="row">
-        <div class="col-md-6 justify-content-center">
+        <div class="col-md-6 justify-content-center" data-aos="fade-right" data-aos-duration="1500">
           <router-link class="btn btn-md btn-success mt-4 tombol" to="/ditempat"> <i class="bi bi-cart-plus"></i> Klik Disini untuk Pesan ditempat </router-link>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" data-aos="fade-left" data-aos-duration="1500">
           <router-link class="btn btn-md mt-4 online" to="/online"> <i class="bi bi-cart-plus"></i> Klik Disini untuk Pesan Online </router-link>
+        </div>
+        <div class="col justify-content-center" data-aos="fade-left" data-aos-duration="1500">
+          <button v-on:click="logout" class="btn btn-md mt-4 text-center logout"><i class="bi bi-cart-plus"></i> Log out</button>
         </div>
       </div>
     </div>
@@ -98,6 +101,10 @@ export default {
     };
   },
   methods: {
+    logout() {
+      localStorage.clear();
+      this.$router.push({ path: "/masuk" });
+    },
     setKeranjangs(data) {
       this.keranjangs = data;
     },
@@ -175,6 +182,10 @@ export default {
   margin-left: 20px;
   background-color: greenyellow;
 }
+.logout {
+  width: 50%;
+  background-color: greenyellow;
+}
 @media (max-width: 767.98px) {
   .keranjang,
   .keranjang2,
@@ -187,6 +198,12 @@ export default {
   .online {
     margin-left: 0px;
     background-color: greenyellow;
+  }
+  .logout {
+    width: 50%;
+    background-color: rgb(188, 0, 0);
+    color: white;
+    margin-left: 90px;
   }
 }
 </style>

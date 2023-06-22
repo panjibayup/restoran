@@ -12,7 +12,7 @@ import axios from "axios";
       <HeroPage />
 
       <section class="product">
-        <div class="row best" style="margin-top: 150px">
+        <div class="row best" style="margin-top: 150px" data-aos="fade-down" data-aos-duration="1500">
           <div class="col-md-10">
             <h2>
               Best
@@ -25,7 +25,7 @@ import axios from "axios";
         </div>
 
         <div class="row best2 mb-4">
-          <div class="col-md-4 mt-4" v-for="product in products" :key="product.id">
+          <div class="col-md-4 mt-4" v-for="product in products" :key="product.id" data-aos="zoom-in-right" data-aos-duration="1500">
             <CardProduct :product="product" />
           </div>
         </div>

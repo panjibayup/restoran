@@ -2,7 +2,7 @@
   <section>
     <div class="hero" style="margin-top: 100px">
       <div class="row justify-content-center mt-4 hero-satu">
-        <div class="col-md-6">
+        <div class="col-md-6" data-aos="fade-right" data-aos-duration="1500">
           <div class="d-flex h-100">
             <div class="justify-content-center align-self-center">
               <h2 class="hero-text">
@@ -10,12 +10,12 @@
                 <br />menggunakan Gadgetmu
               </h2>
               <p>Ayo segera pilih dan pesan makanan favorit Kamu</p>
-              <router-link class="btn btn-lg btn-success mt-4 tombol" to="/menu"> <i class="bi bi-cart-plus"></i> Pesan ditempat </router-link>
-              <router-link class="btn btn-lg mt-4 online" to="/daftar"> <i class="bi bi-cart-plus"></i> Pesan Online </router-link>
+              <router-link class="btn btn-lg btn-success mt-4 tombol" to="/menu" data-aos="fade-down" data-aos-duration="2000"> <i class="bi bi-cart-plus"></i> Pesan ditempat </router-link>
+              <router-link class="btn btn-lg mt-4 online" to="/daftar" data-aos="fade-up" data-aos-duration="2000"> <i class="bi bi-cart-plus"></i> Pesan Online </router-link>
             </div>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" data-aos="fade-left" data-aos-duration="1500">
           <img src="../assets/images/hero.png" class="hero-img" style="width: 100%" />
         </div>
       </div>
