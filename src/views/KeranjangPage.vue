@@ -78,9 +78,7 @@
         <div class="col-md-6" data-aos="fade-left" data-aos-duration="1500">
           <router-link class="btn btn-md mt-4 online" to="/online"> <i class="bi bi-cart-plus"></i> Klik Disini untuk Pesan Online </router-link>
         </div>
-        <div class="col justify-content-center" data-aos="fade-left" data-aos-duration="1500">
-          <button v-on:click="logout" class="btn btn-md mt-4 text-center logout"><i class="bi bi-cart-plus"></i> Log out</button>
-        </div>
+        <button v-on:click="logout" class="btn btn-md mt-4 logout"><i class="bi bi-cart-plus"></i> Log out</button>
       </div>
     </div>
   </div>
@@ -110,7 +108,7 @@ export default {
     },
     hapusKeranjang(id) {
       axios
-        .delete("https://confused-northern-ranunculus.glitch.me/keranjangs/" + id)
+        .delete("https://alive-seasoned-summer.glitch.me/keranjangs/" + id)
         .then(() => {
           this.$toast.error("Berhasil Hapus Keranjang", {
             type: "error",
@@ -121,7 +119,7 @@ export default {
 
           // Update Data keranjang
           axios
-            .get("https://confused-northern-ranunculus.glitch.me/keranjangs")
+            .get("https://alive-seasoned-summer.glitch.me/keranjangs")
             .then((response) => this.setKeranjangs(response.data))
             .catch((error) => console.log(error));
         })
@@ -159,7 +157,7 @@ export default {
   },
   mounted() {
     axios
-      .get("https://confused-northern-ranunculus.glitch.me/keranjangs")
+      .get("https://alive-seasoned-summer.glitch.me/keranjangs")
       .then((response) => this.setKeranjangs(response.data))
       .catch((error) => console.log(error));
   },
@@ -199,11 +197,10 @@ export default {
     margin-left: 0px;
     background-color: greenyellow;
   }
-  .logout {
-    width: 50%;
+  button.logout {
     background-color: rgb(188, 0, 0);
     color: white;
-    margin-left: 90px;
+    margin: 20px auto;
   }
 }
 </style>

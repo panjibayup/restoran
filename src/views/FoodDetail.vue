@@ -73,7 +73,7 @@ export default {
       if (this.pesan.jumlah_pemesanan) {
         this.pesan.products = this.product;
         axios
-          .post("https://confused-northern-ranunculus.glitch.me/keranjangs", this.pesan)
+          .post("https://alive-seasoned-summer.glitch.me/keranjangs", this.pesan)
           .then(() => {
             this.$router.push({ path: "/keranjang" });
             this.$toast.success("Berhasil Masuk ke Keranjang", {
@@ -96,7 +96,7 @@ export default {
   },
   mounted() {
     axios
-      .get("https://confused-northern-ranunculus.glitch.me/products/" + this.$route.params.id)
+      .get("https://alive-seasoned-summer.glitch.me/products/" + this.$route.params.id)
       .then((response) => this.setProduct(response.data))
       .catch((error) => console.log(error));
   },

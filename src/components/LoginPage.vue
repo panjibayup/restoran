@@ -34,7 +34,7 @@ export default {
       let result = await axios.get(`https://alive-seasoned-summer.glitch.me/users?email=${this.email}&password=${this.password}`);
       if (result.status == 200 && result.data.length > 0) {
         localStorage.setItem("user-info", JSON.stringify(result.data[0]));
-        this.$router.push({ name: "HomePage" });
+        this.$router.push({ path: "/menu" });
       }
       console.warn(result);
     },
@@ -42,7 +42,7 @@ export default {
   mounted() {
     let user = localStorage.getItem("user-info");
     if (user) {
-      this.$router.push({ name: "HomePage" });
+      this.$router.push({ path: "/menu" });
     }
   },
   components: { NavbarPage },

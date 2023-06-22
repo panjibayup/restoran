@@ -50,7 +50,7 @@ export default {
   },
   mounted() {
     axios
-      .get("https://confused-northern-ranunculus.glitch.me/best-products")
+      .get("https://alive-seasoned-summer.glitch.me/best-products")
       .then((response) => this.setProducts(response.data))
       .catch((error) => console.log(error));
   },

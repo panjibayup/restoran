@@ -69,11 +69,11 @@ export default {
       if (this.pesan.nama && this.pesan.Alamat && this.pesan.Wa) {
         this.pesan.keranjangs = this.keranjangs;
         axios
-          .post("https://confused-northern-ranunculus.glitch.me/pesanans", this.pesan)
+          .post("https://alive-seasoned-summer.glitch.me/pesanans", this.pesan)
           .then(() => {
             // Hapus Semua Keranjang
             this.keranjangs.map(function (item) {
-              return axios.delete("https://confused-northern-ranunculus.glitch.me/keranjangs/" + item.id).catch((error) => console.log(error));
+              return axios.delete("https://alive-seasoned-summer.glitch.me/keranjangs/" + item.id).catch((error) => console.log(error));
             });
 
             this.$router.push({ path: "/pesanan-sukses" });
@@ -97,7 +97,7 @@ export default {
   },
   mounted() {
     axios
-      .get("https://confused-northern-ranunculus.glitch.me/keranjangs")
+      .get("https://alive-seasoned-summer.glitch.me/keranjangs")
       .then((response) => this.setKeranjangs(response.data))
       .catch((error) => console.log(error));
   },

@@ -55,14 +55,14 @@ export default {
     },
     searchFood() {
       axios
-        .get("https://confused-northern-ranunculus.glitch.me/products?q=" + this.search)
+        .get("https://alive-seasoned-summer.glitch.me/products?q=" + this.search)
         .then((response) => this.setProducts(response.data))
         .catch((error) => console.log(error));
     },
   },
   mounted() {
     axios
-      .get("https://confused-northern-ranunculus.glitch.me/products")
+      .get("https://alive-seasoned-summer.glitch.me/products")
       .then((response) => this.setProducts(response.data))
       .catch((error) => console.log(error));
   },

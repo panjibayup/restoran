@@ -48,7 +48,7 @@ export default {
   props: ["updateKeranjang"],
   mounted() {
     axios
-      .get("https://confused-northern-ranunculus.glitch.me/keranjangs")
+      .get("https://alive-seasoned-summer.glitch.me/keranjangs")
       .then((response) => this.setJumlah(response.data))
       .catch((error) => console.log(error));
   },
