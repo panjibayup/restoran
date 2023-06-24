@@ -35,6 +35,19 @@ export default {
       if (result.status == 200 && result.data.length > 0) {
         localStorage.setItem("user-info", JSON.stringify(result.data[0]));
         this.$router.push({ path: "/menu" });
+        this.$toast.success("Kamu Berhasil Masuk", {
+          type: "success",
+          position: "top-right",
+          duration: 4000,
+          dismissible: true,
+        });
+      } else {
+        this.$toast.error("Email dan Password Harus di isi", {
+          type: "error",
+          position: "top-right",
+          duration: 3000,
+          dismissible: true,
+        });
       }
       console.warn(result);
     },

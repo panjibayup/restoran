@@ -103,7 +103,7 @@ export default {
       if (result.status == 201) {
         localStorage.setItem("user-info", JSON.stringify(result.data));
         this.$router.push({ path: "/menu" });
-        this.$toast.success("Kamu Berhasil Masuk", {
+        this.$toast.success("Akun berhasil dibuat", {
           type: "success",
           position: "top-right",
           duration: 4000,
